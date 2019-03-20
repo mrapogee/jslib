@@ -23,6 +23,7 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
 
     private deviceCache: DeviceType = null;
     private analyticsIdCache: string = null;
+    private windowType: string = null;
 
     constructor(private i18nService: I18nService, private messagingService: MessagingService,
         private isDesktopApp: boolean) {
@@ -51,6 +52,15 @@ export class ElectronPlatformUtilsService implements PlatformUtilsService {
     getDeviceString(): string {
         const device = DeviceType[this.getDevice()].toLowerCase();
         return device.replace('desktop', '');
+    }
+
+    getWindowType(): string {
+        return this.windowType
+    }
+
+    setWindowType(type: string): void {
+        console.log('set window type to', type)
+        this.windowType = type
     }
 
     isFirefox(): boolean {

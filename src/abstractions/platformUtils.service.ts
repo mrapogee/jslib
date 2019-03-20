@@ -4,6 +4,8 @@ export abstract class PlatformUtilsService {
     identityClientId: string;
     getDevice: () => DeviceType;
     getDeviceString: () => string;
+    getWindowType: () => string;
+    setWindowType: (windowType: string) => void;
     isFirefox: () => boolean;
     isChrome: () => boolean;
     isEdge: () => boolean;
